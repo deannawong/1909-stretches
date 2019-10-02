@@ -27,18 +27,24 @@ productWhichMadeMostMoney returns an object with an id for that product and a to
 //write the productWhichMadeMostMoney function
 
 function bestSales(sales) {
-  const bestSalesObj={};
-  const bestProduct=0;
-  const amountSold=0;
+  let bestSalesObj={};
+  let bestProduct=0;
+  let amountSold=0;
+
+  if(sales.length===0)return {}
 
   sales.forEach(prod=>{
-    if(prod[productId]===bestProduct){
-      amountSold+=prod[amount]
-    }else if(prod[amount]>amountSold){
-      bestProduct=prod[productId];
-      amountSold=prod[amount];
+    if(prod.productId===bestProduct){
+      amountSold+=prod.amount;
+    }else if(prod.amount>amountSold){
+      bestProduct=prod.productId;
+      amountSold=prod.amount;
     }
   })
+  bestSalesObj.id=bestProduct;
+  bestSalesObj.total=amountSold;
+
+  return bestSalesObj;
 
 }
 

@@ -1,10 +1,6 @@
 function times(num) {
     if(Number.isInteger(num)){
-        return (newNum)=>{
-            return newNum*num;
-    
-        }
-
+        return (newNum)=>newNum*num;
     }
     throw 'Numbers only!'
 }

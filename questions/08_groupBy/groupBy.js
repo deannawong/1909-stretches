@@ -3,7 +3,8 @@ function groupBy(arr, attr) {
         if(accum[arg.attr]){
             accum[arg[attr]].push(arg)
         }else{
-            accum[arg[attr]]=[arg];
+            accum[arg[attr]]=[];
+            accum[arg[attr]].push(arg)
         }
         return accum;
             

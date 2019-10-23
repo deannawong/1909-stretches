@@ -6,6 +6,7 @@ class DiceRoller {
   constructor(numSides,numDice){
     this.sides=numSides;
     this.dice=numDice;
+    this.history=[];
 
     if(typeof numSides!== 'number'||typeof numDice !=='number'||numSides<=0||numDice<=0){
       throw new Error ('error'); 
@@ -15,10 +16,12 @@ class DiceRoller {
     let result=[];
 
     for(let i=0;i<this.dice;i++){
-      result.push(Math.floor(Math.random()*Math.floor(this.sides)))
+      result.push(Math.floor(Math.random()*this.sides)+1)
     }
+    this.history.push(result)
     return result;
   }
 }
+
 
 module.exports = { DiceRoller };

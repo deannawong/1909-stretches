@@ -4,23 +4,29 @@
 
 class DiceRoller {
   constructor(numSides,numDice){
-    this.sides=numSides;
-    this.dice=numDice;
-    this.history=[];
+    this._sides=numSides;
+    this._dice=numDice;
+    this._history=[];
 
     if(typeof numSides!== 'number'||typeof numDice !=='number'||numSides<=0||numDice<=0){
       throw new Error ('error'); 
     }
-  }
-  roll(){
-    let result=[];
 
-    for(let i=0;i<this.dice;i++){
-      result.push(Math.floor(Math.random()*this.sides)+1)
+    this.roll=()=>{
+      let result=[];
+      for(let i=0;i<this._dice;i++){
+        result.push(Math.floor(Math.random()*this._sides)+1)
+      }
+      this._history.push(result)
+      return result;
+
     }
-    this.history.push(result)
-    return result;
   }
+
+  get history(){
+    return this._history;
+  }
+  
 }
 
 

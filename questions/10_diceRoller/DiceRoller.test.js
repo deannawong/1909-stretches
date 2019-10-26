@@ -61,6 +61,7 @@ describe('Dice Roller', () => {
     expect(tenByThree.history).toEqual(rollHistory);
     const diceRollerProperties = Object.values(tenByThree);
     diceRollerProperties.forEach(val => {
+      console.log(val)
       expect(typeof val).not.toEqual('number');
       expect(typeof val).not.toEqual('string');
       expect(typeof val).not.toEqual('object');

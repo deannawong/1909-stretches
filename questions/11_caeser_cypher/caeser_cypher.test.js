@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const { encryptString } = require('./Caeser_Cypher');
+=======
+const { encryptString } = require('./caeser_cypher');
+>>>>>>> 0b7feef4fb4c7bb9811ae0bce7dc57e0bd8d0cb6
 
 test('it should be able to shift letters', () => {
   expect(encryptString('abc', 1)).toEqual('bcd');

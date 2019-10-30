@@ -7,17 +7,23 @@
 //  456
 
 const floydsTriangle = n => {
-    let result='';
-    
-    for(let i=1;i<n;i++){
-        let currentNum=1;
-        
-        for(let j=0;j<i;j++){
-            result+=currentNum;
-            ++currentNum;
+    // let result='';
+    let result = [];
+    let currentNum=1;
+
+    for(let i=0;i<n;i++){
+        // let currentNum=1;
+        let currentRow=[];
+
+        for(let j=0;j<=i;j++){
+            // result+=currentNum;
+            // ++currentNum;
+            currentRow.push(currentNum);
+            currentNum++;
         }
+        result.push(currentRow.join(''))
     }
-    return result;
+    return result.join('\n');
 };
 
 module.exports = { floydsTriangle };

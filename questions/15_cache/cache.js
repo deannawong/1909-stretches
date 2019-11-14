@@ -1,15 +1,14 @@
 function cache(func) {
-  let cachedArg, cachedOutput;
+  let cach = {};
   if (typeof func !== "function") {
     throw new Error("Input must be a function.");
   } else {
-    return (outputFunc = arg => {
-      if (cachedArg !== arg) {
-        cachedArg = arg;
-        cachedOutput = func(arg);
-        return cachedOutput;
+    return (outputFunc = (...arg) => {
+      if (arg in cach) {
+        return cach[arg];
       } else {
-        return cachedOutput;
+        cach[arg] = func(...arg);
+        return cach[arg];
       }
     });
   }

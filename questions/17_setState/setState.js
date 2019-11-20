@@ -6,8 +6,9 @@ class StatefulThing {
   constructor(initialState = {}) {
     this.state = initialState;
   }
-  setState() {
-    // YOUR CODE
+  setState(obj) {
+    const [key, value] = Object.entries(obj);
+    this.state[key] = value;
   }
 }
 

@@ -17,3 +17,10 @@
 // YOUR CODE (intentionally blank):
 
 // no export statement required
+
+Array.prototype.next = () => {
+  let idx = 0;
+  const values = Array.prototype.values();
+  console.log(values[idx]);
+  idx++;
+};

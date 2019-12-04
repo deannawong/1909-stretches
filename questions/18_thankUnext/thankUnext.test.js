@@ -1,8 +1,8 @@
-require('./thankUnext.js');
-describe('thank u next', () => {
+require("./thankUnext.js");
+describe("thank u next", () => {
   let consoleLogSpy;
   beforeAll(() => {
-    consoleLogSpy = jest.spyOn(console, 'log');
+    consoleLogSpy = jest.spyOn(console, "log");
   });
   beforeEach(() => {
     consoleLogSpy.mockClear();
@@ -10,20 +10,20 @@ describe('thank u next', () => {
 
   test('there should be a method called "next" that is callable on any array', () => {
     const arr1 = [1, 2, 3, 4];
-    expect(typeof arr1.next).toEqual('function');
-    const arr2 = ['a', 'b', 'c', 'd'];
-    expect(typeof arr2.next).toEqual('function');
+    expect(typeof arr1.next).toEqual("function");
+    const arr2 = ["a", "b", "c", "d"];
+    expect(typeof arr2.next).toEqual("function");
   });
 
   test('the "next" method should log each index of the array sequentially starting with the first index', () => {
-    const arrayana = ['thank', 'u', 'next'];
+    const arrayana = ["thank", "u", "next"];
 
     arrayana.forEach((word, idx) => {
       arrayana.next();
       expect(consoleLogSpy.mock.calls[idx][0]).toEqual(word);
     });
   });
-  xdescribe('extra credit', () => {
+  describe("extra credit", () => {
     let randomNumsArr;
     const rounds = 5;
     beforeEach(() => {
